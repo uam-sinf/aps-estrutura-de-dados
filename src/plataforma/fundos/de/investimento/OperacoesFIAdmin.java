@@ -18,7 +18,12 @@ public class OperacoesFIAdmin {
     }
     
     public void processarOrdensPendentes() {
-        // TODO: pegar todas as ordens
-        ordensConcluidas.push(operacoesDeUsuario.getProximaOrdem());
+        while (true) {
+            try {
+                ordensConcluidas.push(operacoesDeUsuario.getProximaOrdem());
+            } catch (IndexOutOfBoundsException e) {
+                break;
+            }
+        }
     }
 }

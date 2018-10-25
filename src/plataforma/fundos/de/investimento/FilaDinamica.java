@@ -11,11 +11,11 @@ public class FilaDinamica {
     }
     
     public float dequeue() {
-        return 0;
+        throw new IndexOutOfBoundsException(); // Erro para quando não existem mais elementos
     }
     
     public float front() {
-        return 0;
+        throw new IndexOutOfBoundsException(); // Erro para quando não existem mais elementos
     }
     
     public String imprimir() {

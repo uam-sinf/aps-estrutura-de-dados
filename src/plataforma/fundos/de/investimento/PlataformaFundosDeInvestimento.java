@@ -10,7 +10,7 @@ public class PlataformaFundosDeInvestimento {
         OperacoesFIUser operacoesUser = new OperacoesFIUser();
         OperacoesFIAdmin operacoesAdmin = new OperacoesFIAdmin(operacoesUser);
         
-        // MENU GERAL        
+        // MENU GERAL
         // Controlar comandos de usuário
         Scanner in = new Scanner(System.in);
         boolean quit = false;
@@ -56,8 +56,11 @@ public class PlataformaFundosDeInvestimento {
                         switch (menuItemUser) {
 
                             case 1:
+                                
+                                System.out.println("Insira o valor do montante para compra:");                                
+                                float montanteCompra = inUser.nextFloat();
 
-                                operacoesUser.comprar(100);
+                                operacoesUser.comprar(montanteCompra);
                                 
                                 System.out.println("Operação de compra efetuada!");
                                 
@@ -65,7 +68,10 @@ public class PlataformaFundosDeInvestimento {
 
                             case 2:
 
-                                operacoesUser.vender(100);
+                                System.out.println("Insira o valor do montante para venda:");                                
+                                float montanteVenda = inUser.nextFloat();
+                                
+                                operacoesUser.vender(montanteVenda);
                                 
                                 System.out.println("Operação de compra efetuada!");
                                 

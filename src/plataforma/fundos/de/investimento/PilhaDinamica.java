@@ -11,11 +11,11 @@ public class PilhaDinamica {
     }
     
     public float pop() {
-        return 0;
+        throw new IndexOutOfBoundsException(); // Erro para quando não existem mais elementos
     }
     
     public float top() {
-        return 0;
+        throw new IndexOutOfBoundsException(); // Erro para quando não existem mais elementos
     }
     
     public String imprimir() {
