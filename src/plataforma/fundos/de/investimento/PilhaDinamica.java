@@ -10,12 +10,8 @@ public class PilhaDinamica {
         
     }
     
-    public boolean isEmpty() {
-        
-        if(topo == null){
-            return true;
-
-        }
+    public boolean isEmpty() {        
+        return topo == null;
     }
     
     public void push(float dado) {
@@ -29,20 +25,13 @@ public class PilhaDinamica {
         
     }
     
-    public float pop() {
-        throw new IndexOutOfBoundsException(); // Erro para quando não existem mais elementos
+    public float pop() {        
+        if(isEmpty())
+            throw new IndexOutOfBoundsException();            
         
-        if(isEmpty()) {
-
-            return -1;
-            
-        }
-        else {
-
-            No temp = topo;
-            topo = topo.prox;
-                        
-        }
+        No temp = topo;
+        topo = topo.prox;
+        
         return temp.dado;
         
     }
@@ -52,22 +41,15 @@ public class PilhaDinamica {
     }
     
     public String imprimir() {
+        String txt = "";
         
-        if(isEmpty()) {
+        No atual = topo;
 
-            System.out.println("Não há investimentos!"); 
-                      
+        while(atual != null) {
+            txt += atual.dado + " ";
+            atual = atual.prox;                
         }
-        else {
-            String txt = "";
-            No atual = topo;
-
-            while(atual != null) {
-
-                atual.imprime();
-                atual = atual.prox;
-                
-            }
+        
         return txt;
-    }    
+    }
 }

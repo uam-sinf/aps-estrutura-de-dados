@@ -11,7 +11,7 @@ class OperacoesFIUser {
         ordens.enqueue(-montante);
     }
     
-    public String imprimirOrdensPendentes() {
+    public String imprimirOrdensPendentes() {        
         return ordens.imprimir();
     }
     

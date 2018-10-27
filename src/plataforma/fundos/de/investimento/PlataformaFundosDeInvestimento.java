@@ -46,7 +46,8 @@ public class PlataformaFundosDeInvestimento {
                                 + "1. Comprar fundo\n"
                                 + "2. Vender fundo\n"
                                 + "3. Ver ordens pendentes\n"
-                                + "0. Sair");
+                                + "4. Ver ordens concluídas\n"
+                                + "0. Voltar");
 
                         System.out.print("Escolha uma opção do menu: ");
 
@@ -62,6 +63,8 @@ public class PlataformaFundosDeInvestimento {
 
                                 operacoesUser.comprar(montanteCompra);
                                 
+                                Utils.ClearConsole();
+                                
                                 System.out.println("Operação de compra efetuada!");
                                 
                                 break;
@@ -73,13 +76,39 @@ public class PlataformaFundosDeInvestimento {
                                 
                                 operacoesUser.vender(montanteVenda);
                                 
+                                Utils.ClearConsole();
+                                
                                 System.out.println("Operação de compra efetuada!");
                                 
                                 break;
 
                             case 3:
 
-                                operacoesUser.imprimirOrdensPendentes();
+                                System.out.println("Ordens Pendentes:");
+                                
+                                String pendentes2 = operacoesAdmin.imprimirOrdensPendentes();
+                                
+                                if (!pendentes2.isEmpty()) {
+                                    System.out.println(pendentes2);
+                                }
+                                else {
+                                    System.out.println("Nenhum ordem pendente!");
+                                }
+                                
+                                break;
+
+                            case 4:
+
+                                System.out.println("Ordens Concluídas:");
+                                
+                                String concluidas = operacoesAdmin.imprimirOrdensConcluidas();
+                                
+                                if (!concluidas.isEmpty()) {
+                                    System.out.println(concluidas);
+                                }
+                                else {
+                                    System.out.println("Nenhum ordem concluída!");
+                                }
                                 
                                 break;
 
@@ -116,8 +145,8 @@ public class PlataformaFundosDeInvestimento {
                         System.out.println("\n"
                                 + "1. Processar ordens\n"
                                 + "2. Ver ordens pendentes\n"
-                                + "3. Ver ordens processadas\n"
-                                + "0. Sair");
+                                + "3. Ver ordens concluídas\n"
+                                + "0. Voltar");
 
                         System.out.print("Escolha uma opção do menu: ");
 
@@ -128,21 +157,48 @@ public class PlataformaFundosDeInvestimento {
 
                             case 1:
 
-                                operacoesAdmin.processarOrdensPendentes();
+                                System.out.println("Processando ordens...");
                                 
-                                System.out.println("As ordens pendentes foram processadas!");
+                                String pendentes1 = operacoesAdmin.imprimirOrdensPendentes();
+                                
+                                if (!pendentes1.isEmpty()) {
+                                    System.out.println(pendentes1);
+                                    operacoesAdmin.processarOrdensPendentes();
+                                    System.out.println("As ordens pendentes foram processadas!");
+                                }
+                                else {
+                                    System.out.println("Nenhum ordem pendente!");
+                                }
                                 
                                 break;
 
                             case 2:
 
-                                System.out.println(operacoesAdmin.imprimirOrdensPendentes());
+                                System.out.println("Ordens Pendentes:");
+                                
+                                String pendentes2 = operacoesAdmin.imprimirOrdensPendentes();
+                                
+                                if (!pendentes2.isEmpty()) {
+                                    System.out.println(pendentes2);
+                                }
+                                else {
+                                    System.out.println("Nenhum ordem pendente!");
+                                }
                                 
                                 break;
 
                             case 3:
 
-                                System.out.println(operacoesAdmin.imprimirOrdensConcluidas());
+                                System.out.println("Ordens Concluídas:");
+                                
+                                String concluidas = operacoesAdmin.imprimirOrdensConcluidas();
+                                
+                                if (!concluidas.isEmpty()) {
+                                    System.out.println(concluidas);
+                                }
+                                else {
+                                    System.out.println("Nenhum ordem concluída!");
+                                }
                                 
                                 break;
 

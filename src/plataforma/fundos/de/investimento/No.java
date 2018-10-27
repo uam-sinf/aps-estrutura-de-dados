@@ -2,14 +2,12 @@ package plataforma.fundos.de.investimento;
 
 public class No {
 
-    public int investimento;
+    public float dado;
     public No prox;
 
-    public No(int invest){
-
-        investimento = invest;
-        next = null;
-
+    public No(float dado){
+        this.dado = dado;
+        this.prox = null;
     }
     
 }

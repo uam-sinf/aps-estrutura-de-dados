@@ -12,13 +12,8 @@ public class FilaDinamica {
 
     }
     
-    public boolean isEmpty() {
-        
-        if(quantidade == 0){
-
-            return true;
-
-        }
+    public boolean isEmpty() {        
+        return quantidade == 0;
     }
     
     public void enqueue(float dado) {
@@ -26,41 +21,29 @@ public class FilaDinamica {
         No novoNo = new No(dado);
 
         if(isEmpty()) {
-
             inicio = fim = novoNo;
-
         }
         else {
-
-            fim.next = novoNo;
-            fim = novoNo
-
+            fim.prox = novoNo;
+            fim = novoNo;
         }
 
         quantidade++;
         
     }
     
-    public float dequeue() {
-        throw new IndexOutOfBoundsException(); // Erro para quando não existem mais elementos
-        
+    public float dequeue() {        
         if(isEmpty()) {
-
-            return -1;
+            throw new IndexOutOfBoundsException();
         }
         else {
-
             No temp = inicio;
 
             if(inicio == fim) {
-
                 inicio = fim = null;
-
             }
             else {
-
-                inicio = inicio.next;
-
+                inicio = inicio.prox;
             }
             quantidade--;
             return temp.dado;
@@ -68,34 +51,25 @@ public class FilaDinamica {
         }
     }
     
-    public float front() {
-        throw new IndexOutOfBoundsException(); // Erro para quando não existem mais elementos
-        
-        if(inicio != null) {
-            
-            
+    public float front() {        
+        if(isEmpty()) {
+            throw new IndexOutOfBoundsException();            
         }
-        
+        else {
+            return inicio.dado;
+        }
     }
     
     public String imprimir() {
+        String txt = "";        
         
-        if(isEmpty()) {
+        No atual = inicio;
 
-            return "Não há investimentos!"
-
+        while(atual != null) {
+            txt += atual.dado + " ";
+            atual = atual.prox;
         }
-        else {
-            String txt = "";
-            No atual = inicio;
-
-            while(atual != null) {
-
-                saida += atual.imprimir() + " ";
-                atual = atual.next;
-
-            }
-        }
+        
         return txt;
     }
 }
