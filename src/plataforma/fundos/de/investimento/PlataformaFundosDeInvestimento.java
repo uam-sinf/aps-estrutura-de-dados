@@ -1,3 +1,7 @@
+// Integrantes do Grupo:
+// Douglas Santos RA: 20950019
+// Nathalia Friederichs RA: 21028220
+// Thiago Pessia RA: 21027210
 package plataforma.fundos.de.investimento;
 
 import java.util.Scanner;
