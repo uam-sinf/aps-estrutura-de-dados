@@ -92,7 +92,7 @@ public class PlataformaFundosDeInvestimento {
                                     System.out.println(pendentes2);
                                 }
                                 else {
-                                    System.out.println("Nenhum ordem pendente!");
+                                    System.out.println("Nenhuma ordem pendente!");
                                 }
                                 
                                 break;
@@ -107,7 +107,7 @@ public class PlataformaFundosDeInvestimento {
                                     System.out.println(concluidas);
                                 }
                                 else {
-                                    System.out.println("Nenhum ordem concluída!");
+                                    System.out.println("Nenhuma ordem concluída!");
                                 }
                                 
                                 break;
@@ -167,7 +167,7 @@ public class PlataformaFundosDeInvestimento {
                                     System.out.println("As ordens pendentes foram processadas!");
                                 }
                                 else {
-                                    System.out.println("Nenhum ordem pendente!");
+                                    System.out.println("Nenhuma ordem pendente!");
                                 }
                                 
                                 break;
@@ -182,7 +182,7 @@ public class PlataformaFundosDeInvestimento {
                                     System.out.println(pendentes2);
                                 }
                                 else {
-                                    System.out.println("Nenhum ordem pendente!");
+                                    System.out.println("Nenhuma ordem pendente!");
                                 }
                                 
                                 break;
@@ -197,7 +197,7 @@ public class PlataformaFundosDeInvestimento {
                                     System.out.println(concluidas);
                                 }
                                 else {
-                                    System.out.println("Nenhum ordem concluída!");
+                                    System.out.println("Nenhuma ordem concluída!");
                                 }
                                 
                                 break;
